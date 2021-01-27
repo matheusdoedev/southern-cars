@@ -1,0 +1,19 @@
+@import "../../styles/settings/colors";
+
+.dashboard-layout {
+  width: 100vw;
+  display: flex;
+  min-height: 100vh;
+
+  &.modal {
+    filter: brightness(25%);
+    -webkit-filter: brightness(25%);
+  }
+}
+
+.dashboard-content {
+  background: $support;
+  width: 100%;
+  max-height: 100vh;
+  overflow: scroll;
+}
