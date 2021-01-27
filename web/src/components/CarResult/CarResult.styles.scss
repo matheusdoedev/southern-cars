@@ -1,0 +1,44 @@
+.car-result-cell {
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr 1fr 1fr 2fr 2fr;
+  align-items: center;
+  column-gap: var(--gap-sm);
+  width: 100%;
+  background: white;
+  padding: var(--gap-xs);
+  border-radius: 4px;
+  margin-bottom: var(--gap-sm);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+
+  > p {
+    text-transform: uppercase;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.car-result-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.car-result-button {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  box-sizing: content-box;
+
+  &:first-child {
+    margin-right: var(--gap);
+  }
+
+  > img {
+    width: 20px;
+    height: 20px;
+  }
+}
