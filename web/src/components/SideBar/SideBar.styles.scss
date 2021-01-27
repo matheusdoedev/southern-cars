@@ -1,0 +1,36 @@
+.sidebar {
+  padding: var(--gap-xs);
+}
+
+.sidebar-nav {
+  margin-top: var(--gap-lg);
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-nav-item {
+  display: flex;
+  justify-content: center;
+
+  & + & {
+    margin-bottom: var(--gap-sm);
+  }
+}
+
+.sidebar-nav-link {
+  width: 43px;
+  height: 43px;
+  box-sizing: content-box;
+
+  text-align: center;
+}
+
+.sidebar-nav-link-img {
+  width: 43px;
+  height: 43px;
+  margin-bottom: var(--gap);
+}
