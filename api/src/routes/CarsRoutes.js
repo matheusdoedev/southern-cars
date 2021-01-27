@@ -14,4 +14,6 @@ routes.get('/', CarsController.getCarByName);
 
 routes.get('/', CarsController.getAllCars);
 
+routes.get('/:id', CarsController.getCarById);
+
 module.exports = routes;

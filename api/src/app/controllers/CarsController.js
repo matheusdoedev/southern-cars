@@ -82,6 +82,19 @@ class CarsController {
       return res.status(400).json({ message: err });
     }
   }
+
+  // get car by id
+  static async getCarById(req, res) {
+    const { id } = req.params;
+
+    try {
+      const car = await Cars.findOne({ where: { id } }).then((r) => r.get());
+
+      return res.status(200).json({ ...car });
+    } catch (err) {
+      return res.status(400).json({ message: err });
+    }
+  }
 }
 
 module.exports = CarsController;
