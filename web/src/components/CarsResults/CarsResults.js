@@ -60,6 +60,7 @@ const CarsResults = ({ cars }) => {
           >
             <Button
               content="Add car"
+              className="button add-car-button"
               icon={plusIcon}
               onClick={() => {
                 resetDataStates([

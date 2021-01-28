@@ -12,16 +12,16 @@ const CarsModalForm = () => {
     <>
       <Input
         name="Name"
-        value={carsContext.name}
-        setValue={carsContext.setName}
+        value={carsContext?.name}
+        setValue={carsContext?.setName}
         required
       />
       <div className="input-group">
         <Select
           label="Manufacturer"
           defaultValue=""
-          value={carsContext.manufacturer}
-          setValue={carsContext.setManufacturer}
+          value={carsContext?.manufacturer}
+          setValue={carsContext?.setManufacturer}
           name="manufacturer"
           required
           options={[
@@ -33,8 +33,8 @@ const CarsModalForm = () => {
         <Select
           label="Color"
           defaultValue=""
-          value={carsContext.color}
-          setValue={carsContext.setColor}
+          value={carsContext?.color}
+          setValue={carsContext?.setColor}
           name="color"
           required
           options={[
@@ -48,14 +48,14 @@ const CarsModalForm = () => {
       <div className="input-group">
         <Input
           name="Price"
-          value={carsContext.price}
-          setValue={carsContext.setPrice}
+          value={carsContext?.price}
+          setValue={carsContext?.setPrice}
           required
         />
         <Input
           name="Quantity"
-          value={carsContext.qty}
-          setValue={carsContext.setQTY}
+          value={carsContext?.qty}
+          setValue={carsContext?.setQTY}
           required
         />
       </div>

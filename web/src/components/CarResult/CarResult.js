@@ -21,8 +21,8 @@ const CarResult = ({ id, name, manufacturer, color, qty, price }) => {
       <p>{name}</p>
       <p>{manufacturer}</p>
       <p>{color}</p>
-      <p style={{ justifySelf: "flex-end" }}>{qty}</p>
-      <p style={{ justifySelf: "flex-end" }}>{price}</p>
+      <p>{qty}</p>
+      <p>{price}</p>
       <div className="car-result-buttons">
         <Link
           className="car-result-button"

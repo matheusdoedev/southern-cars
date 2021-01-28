@@ -1,9 +1,33 @@
+@import "../../styles/tools/breakpoints";
+@import "../../styles/tools/animations";
+
 .sidebar {
   padding: var(--gap-xs);
+
+  @media (max-width: $small) {
+    display: none;
+
+    &.active {
+      animation: move-right 0.5s forwards;
+      display: flex;
+      flex-direction: column;
+      padding: var(--gap-xs);
+      height: 100%;
+      box-sizing: content-box;
+      position: absolute;
+      z-index: 10;
+      background: white;
+      -webkit-animation: move-right 0.5s forwards;
+    }
+  }
 }
 
 .sidebar-nav {
   margin-top: var(--gap-lg);
+
+  @media (max-width: $small) {
+    margin-top: var(--gap-md);
+  }
 }
 
 .sidebar-menu {
