@@ -1,0 +1,17 @@
+@import "../../styles/settings/colors";
+@import "../../styles/tools/breakpoints";
+
+.header {
+  padding: var(--gap-xs) 0;
+  background: $secondary;
+}
+
+.header-account {
+  display: flex;
+  align-items: center;
+}
+
+.header-account-name {
+  color: white;
+  margin-right: var(--gap-xs);
+}

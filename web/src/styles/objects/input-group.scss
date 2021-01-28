@@ -1,0 +1,6 @@
+.input-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--gap-sm);
+  margin-top: var(--gap-sm);
+}

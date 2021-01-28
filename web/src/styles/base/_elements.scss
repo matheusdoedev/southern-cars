@@ -1,0 +1,59 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include fontPrimary;
+
+  color: $secondary;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+p,
+a,
+button,
+input,
+span {
+  @include fontPrimary;
+
+  color: $secondary;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5em;
+  max-width: 30em;
+  font-weight: 400;
+}
+
+a {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1em;
+}
+
+button,
+input,
+span {
+  font-size: 1rem;
+  line-height: 1em;
+  font-weight: 400;
+}
