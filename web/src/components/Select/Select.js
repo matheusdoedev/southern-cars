@@ -7,15 +7,7 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import SelectInput from "@material-ui/core/Select";
 
-const Select = ({
-  name,
-  value,
-  setValue,
-  defaultValue,
-  label,
-  options,
-  ...props
-}) => {
+const Select = ({ name, value, setValue, label, options, ...props }) => {
   const handleChange = (event) => {
     setValue(event.target.value);
   };
@@ -24,12 +16,14 @@ const Select = ({
     <FormControl variant="filled">
       <InputLabel id={name}>{label}</InputLabel>
       <SelectInput
-        labelId={defaultValue}
+        labelId=""
+        defaultValue=""
         id={name}
         value={value}
         onChange={handleChange}
         {...props}
       >
+        <MenuItem value="">Select a option</MenuItem>
         {options?.map((option) => (
           <MenuItem value={option.value} key={option.value}>
             {option.label}
