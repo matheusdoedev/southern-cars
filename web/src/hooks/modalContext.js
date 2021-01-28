@@ -29,7 +29,7 @@ export const ModalContextComponent = ({ children }) => {
     const modal = document.querySelector(`[data-modal="${currentModal}"]`);
     const body = document.querySelector(`[data-modal="body"]`);
 
-    // funtion to turn of all modals
+    // funtion to turn off all modals
     const clearModals = () => {
       modals.forEach((modal) => {
         modal?.classList.remove("active");

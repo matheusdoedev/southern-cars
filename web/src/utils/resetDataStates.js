@@ -1,3 +1,5 @@
-export default function resetDataStates(setStates) {
+const resetDataStates = (setStates) => {
   setStates?.forEach((setState) => setState(""));
-}
+};
+
+export default resetDataStates;

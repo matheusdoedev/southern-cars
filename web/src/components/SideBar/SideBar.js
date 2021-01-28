@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
 
 import Brand from "../Brand/Brand";
@@ -17,7 +16,7 @@ const SideBar = () => {
         <ul className="sidebar-nav-menu">
           <li className="sidebar-nav-item">
             <Link to="/" className="sidebar-nav-link">
-              <img src={carIcon} alt="Cars" className="sidebar-nav-link-img" />{" "}
+              <img src={carIcon} alt="Cars" className="sidebar-nav-link-img" />
               Cars
             </Link>
           </li>

@@ -4,39 +4,28 @@ import Input from "../Input/Input";
 import Select from "../Select/Select";
 
 import { CarsContext } from "../../hooks/carsContext";
-
-import useRefreshCars from "../../hooks/useRefreshCars";
+import useRefreshCarsWithFilters from "../../hooks/useRefreshCarsWithFilters";
 
 import "./CarsFilter.styles.scss";
 
 const CarsFilter = () => {
   const carsContext = useContext(CarsContext);
 
-  const { setRefreshCars } = useRefreshCars();
-
-  useEffect(() => {
-    carsContext.handleGetCarsByFilters(() => {
-      setRefreshCars();
-    });
-  }, [
-    carsContext.nameFilter,
-    carsContext.manufacturerFilter,
-    carsContext.colorFilter,
-  ]);
+  useRefreshCarsWithFilters(carsContext);
 
   return (
     <section title="Cars Filters" className="cars-filters-container">
       <Input
         name="Car name"
         placeholder="Filter cars by name"
-        value={carsContext.nameFilter}
-        setValue={carsContext.setNameFilter}
+        value={carsContext?.nameFilter}
+        setValue={carsContext?.setNameFilter}
       />
       <Select
         label="Manufacturer"
         name="manufacturer"
-        value={carsContext.manufacturerFilter}
-        setValue={carsContext.setManufacturerFilter}
+        value={carsContext?.manufacturerFilter}
+        setValue={carsContext?.setManufacturerFilter}
         options={[
           { value: "Ford", label: "Ford" },
           { value: "Mazda", label: "Mazda" },
@@ -47,8 +36,8 @@ const CarsFilter = () => {
         label="Color"
         defaultValue=""
         name="color"
-        value={carsContext.colorFilter}
-        setValue={carsContext.setColorFilter}
+        value={carsContext?.colorFilter}
+        setValue={carsContext?.setColorFilter}
         options={[
           { value: "Black", label: "Black" },
           { value: "Blue", label: "Blue" },

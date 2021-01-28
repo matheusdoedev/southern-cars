@@ -1,5 +1,3 @@
-export default function testIfComponentRender(component, shallow) {
-  const element = shallow(component);
+const testIfComponentRender = (component, shallow) => shallow(component);
 
-  return element;
-}
+export default testIfComponentRender;

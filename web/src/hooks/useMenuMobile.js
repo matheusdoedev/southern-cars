@@ -15,13 +15,13 @@ const useMenuMobile = () => {
 
     // handle menu mobile behavior according to his state
     if (status) {
-      menu.classList.add("active");
-      toggle.classList.add("active");
-      body.classList.add("active");
+      menu?.classList.add("active");
+      toggle?.classList.add("active");
+      body?.classList.add("active");
     } else {
-      menu.classList.remove("active");
-      toggle.classList.remove("active");
-      body.classList.remove("active");
+      menu?.classList.remove("active");
+      toggle?.classList.remove("active");
+      body?.classList.remove("active");
     }
   }, [status]);
 

@@ -5,13 +5,15 @@ import Brand from "./Brand";
 import brandImg from "../../assets/brand.svg";
 
 describe("Brand", () => {
-  const brand = shallow(<Brand />);
-
   it("should render", () => {
+    const brand = shallow(<Brand />);
+
     expect(brand).toBeTruthy();
   });
 
-  it("should render a Link with a image", () => {
+  it("should contains the brand", () => {
+    const brand = shallow(<Brand />);
+
     expect(
       brand.contains(<img src={brandImg} alt="Southern Cars" />)
     ).toBeTruthy();

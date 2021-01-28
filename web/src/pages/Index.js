@@ -9,6 +9,7 @@ import Modal from "../components/Modal/Modal";
 import ModalForm from "../components/ModalForm/ModalForm";
 import Button from "../components/Button/Button";
 import CarsModalForm from "../components/CarsModalForm/CarsModalForm";
+import Seo from "../components/Seo/Seo";
 
 import { ModalContext } from "../hooks/modalContext";
 import { CarsContext } from "../hooks/carsContext";
@@ -29,9 +30,11 @@ const Index = () => {
 
   return (
     <>
+      <Seo title="Cars" />
+
       <DashboardLayout>
         <CarsHead />
-        <CarsResults cars={carsContext.cars} />
+        <CarsResults cars={carsContext?.cars} />
       </DashboardLayout>
 
       <Modal title="Add car" name="add-car">

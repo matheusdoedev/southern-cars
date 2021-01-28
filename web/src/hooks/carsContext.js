@@ -19,10 +19,6 @@ export const CarsContextComponent = ({ children }) => {
   const [manufacturerFilter, setManufacturerFilter] = useState("");
   const [colorFilter, setColorFilter] = useState("");
 
-  const handleGetCars = async () => {
-    await api("GET", "/cars").then((r) => setCars(r.cars));
-  };
-
   const handlePostCars = async (callback) => {
     await api("POST", "/cars", {
       name,
@@ -59,7 +55,7 @@ export const CarsContextComponent = ({ children }) => {
       `/cars?name=${nameFilter}&manufacturer=${manufacturerFilter}&color=${colorFilter}&priceRange=${priceRange}`
     ).then((r) => {
       setCars(r.cars);
-      callback(r);
+      callback && callback(r);
     });
   };
 
@@ -70,7 +66,6 @@ export const CarsContextComponent = ({ children }) => {
   return (
     <CarsContext.Provider
       value={{
-        handleGetCars,
         handleGetCar,
         handleGetCarsByFilters,
         handlePostCars,

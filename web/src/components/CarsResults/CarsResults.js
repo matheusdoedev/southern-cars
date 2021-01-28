@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 import { Container, Grid } from "@material-ui/core";
 
@@ -79,6 +80,10 @@ const CarsResults = ({ cars }) => {
       </Container>
     </section>
   );
+};
+
+CarsResults.propTypes = {
+  cars: PropTypes.array.isRequired,
 };
 
 export default CarsResults;

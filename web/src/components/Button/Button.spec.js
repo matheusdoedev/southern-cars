@@ -6,6 +6,8 @@ import testIfComponentRender from "../../utils/testIfComponentRender";
 
 describe("Button", () => {
   it("should render", () => {
-    expect(testIfComponentRender(<Button />, render)).toBeTruthy();
+    expect(
+      testIfComponentRender(<Button content="Test" />, render)
+    ).toBeTruthy();
   });
 });

@@ -6,6 +6,8 @@ import testIfComponentRender from "../../utils/testIfComponentRender";
 
 describe("Modal", () => {
   it("should render", () => {
-    expect(testIfComponentRender(<Modal />, render)).toBeTruthy();
+    expect(
+      testIfComponentRender(<Modal title="Test" name="Test" />, render)
+    ).toBeTruthy();
   });
 });

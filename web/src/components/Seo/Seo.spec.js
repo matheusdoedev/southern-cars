@@ -1,13 +1,11 @@
 import { render } from "@testing-library/react";
 
-import ModalForm from "./ModalForm";
+import Seo from "./Seo";
 
 import testIfComponentRender from "../../utils/testIfComponentRender";
 
-describe("ModalForm", () => {
+describe("Seo", () => {
   it("should render", () => {
-    expect(
-      testIfComponentRender(<ModalForm name="Test" />, render)
-    ).toBeTruthy();
+    expect(testIfComponentRender(<Seo title="Test" />, render)).toBeTruthy();
   });
 });

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./ModalForm.styles.scss";
 
@@ -8,6 +9,10 @@ const ModalForm = ({ name, children, ...props }) => {
       {children}
     </form>
   );
+};
+
+ModalForm.propTypes = {
+  name: PropTypes.string.isRequired,
 };
 
 export default ModalForm;
