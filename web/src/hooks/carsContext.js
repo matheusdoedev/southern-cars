@@ -2,18 +2,22 @@ import React, { createContext, useState } from "react";
 
 import api from "../services/api";
 
-import useRefreshCars from "./useRefreshCars";
-
 export const CarsContext = createContext();
 
 export const CarsContextComponent = ({ children }) => {
   const [cars, setCars] = useState([]);
 
+  // car data states
   const [name, setName] = useState("");
   const [manufacturer, setManufacturer] = useState("");
   const [color, setColor] = useState("");
   const [price, setPrice] = useState("");
   const [qty, setQTY] = useState("");
+
+  // search filters
+  const [nameFilter, setNameFilter] = useState("");
+  const [manufacturerFilter, setManufacturerFilter] = useState("");
+  const [colorFilter, setColorFilter] = useState("");
 
   const handleGetCars = async () => {
     await api("GET", "/cars").then((r) => setCars(r.cars));
@@ -49,13 +53,13 @@ export const CarsContextComponent = ({ children }) => {
     });
   };
 
-  const handleGetCarsByFilters = async () => {
+  const handleGetCarsByFilters = async (callback) => {
     await api(
       "GET",
-      `/cars?name=${name}&manufacturer=${manufacturer}&color=${color}&priceRange=${priceRange}`
+      `/cars?name=${nameFilter}&manufacturer=${manufacturerFilter}&color=${colorFilter}&priceRange=${priceRange}`
     ).then((r) => {
       setCars(r.cars);
-      useRefreshCars();
+      callback(r);
     });
   };
 
@@ -78,6 +82,12 @@ export const CarsContextComponent = ({ children }) => {
         color,
         price,
         qty,
+        nameFilter,
+        manufacturerFilter,
+        colorFilter,
+        setNameFilter,
+        setManufacturerFilter,
+        setColorFilter,
         setCars,
         setName,
         setManufacturer,

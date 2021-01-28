@@ -1,30 +1,42 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import Input from "../Input/Input";
 import Select from "../Select/Select";
 
 import { CarsContext } from "../../hooks/carsContext";
 
+import useRefreshCars from "../../hooks/useRefreshCars";
+
 import "./CarsFilter.styles.scss";
 
 const CarsFilter = () => {
   const carsContext = useContext(CarsContext);
 
+  const { setRefreshCars } = useRefreshCars();
+
+  useEffect(() => {
+    carsContext.handleGetCarsByFilters(() => {
+      setRefreshCars();
+    });
+  }, [
+    carsContext.nameFilter,
+    carsContext.manufacturerFilter,
+    carsContext.colorFilter,
+  ]);
+
   return (
     <section title="Cars Filters" className="cars-filters-container">
       <Input
         name="Car name"
-        placeholder="Search by car name"
-        value={carsContext.name}
-        onChange={(event) => {
-          carsContext.setName(event.target.value);
-          carsContext.handleGetCarsByFilters();
-        }}
+        placeholder="Filter cars by name"
+        value={carsContext.nameFilter}
+        setValue={carsContext.setNameFilter}
       />
       <Select
         label="Manufacturer"
-        defaultValue=""
         name="manufacturer"
+        value={carsContext.manufacturerFilter}
+        setValue={carsContext.setManufacturerFilter}
         options={[
           { value: "Ford", label: "Ford" },
           { value: "Mazda", label: "Mazda" },
@@ -35,6 +47,8 @@ const CarsFilter = () => {
         label="Color"
         defaultValue=""
         name="color"
+        value={carsContext.colorFilter}
+        setValue={carsContext.setColorFilter}
         options={[
           { value: "Black", label: "Black" },
           { value: "Blue", label: "Blue" },
