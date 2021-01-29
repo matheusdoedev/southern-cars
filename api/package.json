@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "prestart": "NODE_ENV=production sequelize db:create",
     "start": "node src/server/server.js",
     "predev": "NODE_ENV=development sequelize db:create",
     "dev": "nodemon src/server/server.js"
