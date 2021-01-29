@@ -1,6 +1,13 @@
+@import "../../styles/tools/breakpoints";
+
 .input-group {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: var(--gap-sm);
   margin-top: var(--gap-sm);
+
+  @media (max-width: $small) {
+    grid-template-columns: 1fr;
+    row-gap: var(--gap-sm);
+  }
 }
