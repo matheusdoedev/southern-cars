@@ -1,12 +1,11 @@
 @import "../../styles/tools/breakpoints";
 
-.input-group {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: var(--gap-sm);
-  margin-top: var(--gap-sm);
+.button-group {
+  display: flex;
+  justify-content: flex-end;
 
   @media (max-width: $small) {
+    display: grid;
     grid-template-columns: 1fr;
     row-gap: var(--gap-sm);
   }
