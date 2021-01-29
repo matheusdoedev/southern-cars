@@ -18,10 +18,12 @@ const useMenuMobile = () => {
       menu?.classList.add("active");
       toggle?.classList.add("active");
       body?.classList.add("active");
+      body.addEventListener("click", handleActive);
     } else {
       menu?.classList.remove("active");
       toggle?.classList.remove("active");
       body?.classList.remove("active");
+      body.removeEventListener("click", handleActive);
     }
   }, [status]);
 

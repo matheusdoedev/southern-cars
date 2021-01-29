@@ -18,6 +18,7 @@ import useRefreshCars from "../hooks/useRefreshCars";
 import resetDataStates from "../utils/resetDataStates";
 
 import "../styles/objects/input-group.scss";
+import "../styles/objects/button-group.scss";
 
 const Index = () => {
   const modalContext = useContext(ModalContext);
@@ -60,12 +61,7 @@ const Index = () => {
           <CarsModalForm />
         </ModalForm>
 
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-          }}
-        >
+        <div className="button-group">
           <Button
             content="Close"
             secondary
@@ -117,12 +113,7 @@ const Index = () => {
           <CarsModalForm />
         </ModalForm>
 
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-          }}
-        >
+        <div className="button-group">
           <Button
             content="Close"
             secondary
@@ -150,12 +141,7 @@ const Index = () => {
           Are you sure that you want to delete?
         </p>
 
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-          }}
-        >
+        <div className="button-group">
           <Button
             content="Close"
             secondary
