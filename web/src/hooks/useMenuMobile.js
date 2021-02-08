@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 
-const useMenuMobile = () => {
+export default function useMenuMobile() {
   // handle menu mobile activity state
   const [status, setStatus] = useState(false);
 
   // handle the menu mobile activy state change
-  const handleActive = () => (status ? setStatus(false) : setStatus(true));
+  function handleActive() {
+    status ? setStatus(false) : setStatus(true);
+  }
 
   useEffect(() => {
     // getting the menu mobile and the menu mobile toggle
@@ -28,6 +30,4 @@ const useMenuMobile = () => {
   }, [status]);
 
   return { handleActive };
-};
-
-export default useMenuMobile;
+}
