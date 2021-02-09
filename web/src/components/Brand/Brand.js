@@ -5,12 +5,10 @@ import brandImg from "../../assets/brand.svg";
 
 import "./Brand.styles.scss";
 
-const Brand = () => {
+export default function Brand() {
   return (
     <Link to="/" className="brand">
       <img src={brandImg} alt="Southern Cars" />
     </Link>
   );
-};
-
-export default Brand;
+}

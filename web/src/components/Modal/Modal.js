@@ -3,16 +3,16 @@ import PropTypes from "prop-types";
 
 import "./Modal.styles.scss";
 
-const Modal = ({ title, children, name }) => {
+function Modal({ title, children, name }) {
   return (
     <section className="modal-block" title={title} data-modal={name}>
       <h2>{title}</h2>
       {children}
     </section>
   );
-};
+}
 
-Modal.porpTypes = {
+Modal.propTypes = {
   title: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 };

@@ -5,7 +5,7 @@ import CarsFilter from "../CarsFilter/CarsFilter";
 
 import "./CarsHead.styles.scss";
 
-const CarsHead = () => {
+export default function CarsHead() {
   return (
     <section title="Cars head" className="cars-head">
       <Container>
@@ -20,6 +20,4 @@ const CarsHead = () => {
       </Container>
     </section>
   );
-};
-
-export default CarsHead;
+}

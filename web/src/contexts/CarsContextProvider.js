@@ -6,6 +6,7 @@ import usePostCars from "../hooks/usePostCars";
 import usePutCars from "../hooks/usePutCars";
 import useDeleteCars from "../hooks/useDeleteCars";
 import useGetCar from "../hooks/useGetCar";
+import useGetCars from "../hooks/useGetCars";
 
 export const CarsContext = createContext();
 
@@ -18,14 +19,19 @@ export function CarsContextProvider({ children }) {
     qty: "",
   });
 
-  const carsContext = {
-    ...usePostCars(carData),
-    ...usePutCars(carData),
-    ...useDeleteCars(),
-    ...useGetCar(carDataDispatch),
-  };
-
   return (
-    <CarsContext.Provider value={carsContext}>{children}</CarsContext.Provider>
+    <CarsContext.Provider
+      value={{
+        ...usePostCars(carData),
+        ...usePutCars(carData),
+        ...useDeleteCars(),
+        ...useGetCar(carDataDispatch),
+        ...useGetCars(),
+        carData,
+        carDataDispatch,
+      }}
+    >
+      {children}
+    </CarsContext.Provider>
   );
 }
