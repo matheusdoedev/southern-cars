@@ -3,7 +3,9 @@ export default function carDataReducer(state, action) {
     case "SET_DATA":
       return { ...state, [action.carData]: action.content };
     case "SET_CAR_DATA":
-      action.
+      return { ...action.carData };
+    case "RESET_DATA":
+      return { name: "", manufacturer: "", color: "", price: "", qty: "" };
     default:
       return new Error();
   }
