@@ -8,14 +8,12 @@ import Button from "../Button/Button";
 
 import plusIcon from "../../assets/plus.svg";
 
-import { ModalContext } from "../../hooks/modalContext";
-import { CarsContext } from "../../hooks/carsContext";
-
-import resetDataStates from "../../utils/resetDataStates";
+import { ModalContext } from "../../contexts/ModalContextProvider";
+import { CarsContext } from "../../contexts/CarsContextProvider";
 
 import "./CarsResults.styles.scss";
 
-const CarsResults = ({ cars }) => {
+function CarsResults({ cars }) {
   const modalContext = useContext(ModalContext);
   const carsContext = useContext(CarsContext);
 
@@ -48,7 +46,7 @@ const CarsResults = ({ cars }) => {
                   />
                 ))
               ) : (
-                <h2>Cars not found</h2>
+                <h3>Cars not found</h3>
               )}
             </ul>
           </Grid>
@@ -64,13 +62,7 @@ const CarsResults = ({ cars }) => {
               className="button add-car-button"
               icon={plusIcon}
               onClick={() => {
-                resetDataStates([
-                  carsContext.setName,
-                  carsContext.setPrice,
-                  carsContext.setManufacturer,
-                  carsContext.setQTY,
-                  carsContext.setColor,
-                ]);
+                carsContext?.carDataDispatch({ type: "RESET_DATA" });
                 modalContext.handleActive("add-car");
                 history.push("/cars/add");
               }}
@@ -80,7 +72,7 @@ const CarsResults = ({ cars }) => {
       </Container>
     </section>
   );
-};
+}
 
 CarsResults.propTypes = {
   cars: PropTypes.array.isRequired,

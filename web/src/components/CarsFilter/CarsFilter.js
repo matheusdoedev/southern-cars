@@ -1,14 +1,15 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 
 import Input from "../Input/Input";
 import Select from "../Select/Select";
 
-import { CarsContext } from "../../hooks/carsContext";
+import { CarsContext } from "../../contexts/CarsContextProvider";
+
 import useRefreshCarsWithFilters from "../../hooks/useRefreshCarsWithFilters";
 
 import "./CarsFilter.styles.scss";
 
-const CarsFilter = () => {
+export default function CarsFilter() {
   const carsContext = useContext(CarsContext);
 
   useRefreshCarsWithFilters(carsContext);
@@ -18,14 +19,26 @@ const CarsFilter = () => {
       <Input
         name="Car name"
         placeholder="Filter cars by name"
-        value={carsContext?.nameFilter}
-        setValue={carsContext?.setNameFilter}
+        value={carsContext?.carsFilters.nameFilter}
+        onChange={(event) =>
+          carsContext.carsFiltersDispatch({
+            type: "SET_FILTER",
+            carFilter: "nameFilter",
+            content: event.target.value,
+          })
+        }
       />
       <Select
         label="Manufacturer"
         name="manufacturer"
-        value={carsContext?.manufacturerFilter}
-        setValue={carsContext?.setManufacturerFilter}
+        value={carsContext?.carsFilters.manufacturerFilter}
+        onChange={(event) =>
+          carsContext.carsFiltersDispatch({
+            type: "SET_FILTER",
+            carFilter: "manufacturerFilter",
+            content: event.target.value,
+          })
+        }
         options={[
           { value: "Ford", label: "Ford" },
           { value: "Mazda", label: "Mazda" },
@@ -36,8 +49,14 @@ const CarsFilter = () => {
         label="Color"
         defaultValue=""
         name="color"
-        value={carsContext?.colorFilter}
-        setValue={carsContext?.setColorFilter}
+        value={carsContext?.carsFilters.colorFilter}
+        onChange={(event) =>
+          carsContext.carsFiltersDispatch({
+            type: "SET_FILTER",
+            carFilter: "colorFilter",
+            content: event.target.value,
+          })
+        }
         options={[
           { value: "Black", label: "Black" },
           { value: "Blue", label: "Blue" },
@@ -63,6 +82,4 @@ const CarsFilter = () => {
       />
     </section>
   );
-};
-
-export default CarsFilter;
+}

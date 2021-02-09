@@ -1,19 +1,17 @@
 import React from "react";
 
 import Routes from "./routes";
-import { ModalContextComponent } from "./hooks/modalContext";
-import { CarsContextComponent } from "./hooks/carsContext";
+import { ModalContextProvider } from "./contexts/ModalContextProvider";
+import { CarsContextProvider } from "./contexts/CarsContextProvider";
 
 import "./App.scss";
 
-const App = () => {
+export default function App() {
   return (
-    <ModalContextComponent>
-      <CarsContextComponent>
+    <ModalContextProvider>
+      <CarsContextProvider>
         <Routes />
-      </CarsContextComponent>
-    </ModalContextComponent>
+      </CarsContextProvider>
+    </ModalContextProvider>
   );
-};
-
-export default App;
+}

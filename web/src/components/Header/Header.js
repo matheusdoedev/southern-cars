@@ -6,7 +6,7 @@ import MenuMobileToggle from "../MenuMobileToggle/MenuMobileToggle";
 
 import "./Header.styles.scss";
 
-const Header = () => {
+export default function Header() {
   return (
     <header className="header">
       <Container>
@@ -26,6 +26,4 @@ const Header = () => {
       </Container>
     </header>
   );
-};
-
-export default Header;
+}

@@ -5,7 +5,7 @@ import SideBar from "../../components/SideBar/SideBar";
 
 import "./DashboardLayout.styles.scss";
 
-const DashboardLayout = ({ children }) => {
+export default function DashboardLayout({ children }) {
   return (
     <main className="dashboard-layout" data-modal="body">
       <SideBar />
@@ -19,6 +19,4 @@ const DashboardLayout = ({ children }) => {
       </section>
     </main>
   );
-};
-
-export default DashboardLayout;
+}

@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import pencilIcon from "../../assets/pencil.svg";
 import trashIcon from "../../assets/trash.svg";
 
-import { ModalContext } from "../../hooks/modalContext";
-import { CarsContext } from "../../hooks/carsContext";
+import { ModalContext } from "../../contexts/ModalContextProvider";
+import { CarsContext } from "../../contexts/CarsContextProvider";
 
 import "./CarResult.styles.scss";
 
-const CarResult = ({ id, name, manufacturer, color, qty, price }) => {
+function CarResult({ id, name, manufacturer, color, qty, price }) {
   const modalContext = useContext(ModalContext);
   const carsContext = useContext(CarsContext);
 
@@ -28,8 +28,8 @@ const CarResult = ({ id, name, manufacturer, color, qty, price }) => {
         <a
           className="car-result-button"
           onClick={() => {
-            carsContext.handleGetCar(id);
-            modalContext.handleActive("update-car");
+            carsContext?.handleGetCar(id);
+            modalContext?.handleActive("update-car");
             history.push(`/cars/${id}`);
           }}
         >
@@ -47,7 +47,7 @@ const CarResult = ({ id, name, manufacturer, color, qty, price }) => {
       </div>
     </li>
   );
-};
+}
 
 CarResult.propTypes = {
   id: PropTypes.number,

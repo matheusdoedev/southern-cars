@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 
 import siteMetadata from "../../config/metadata-config";
 
-const Seo = ({ title, description, lang, meta }) => {
+function Seo({ title, description, lang, meta }) {
   const metaDescription = description || siteMetadata.description;
 
   return (
@@ -50,7 +50,7 @@ const Seo = ({ title, description, lang, meta }) => {
       ].concat(meta)}
     />
   );
-};
+}
 
 Seo.defaultProps = {
   lang: `en`,

@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 
-import { CarsContext } from "./carsContext";
+import { CarsContext } from "../contexts/CarsContextProvider";
 
-const useRefreshCars = () => {
+export default function useRefreshCars() {
   // refresh cars trigger
   const [refreshCars, setRefreshCars] = useState(true);
 
@@ -10,12 +10,11 @@ const useRefreshCars = () => {
 
   useEffect(() => {
     if (refreshCars) {
-      carsContext?.handleGetCarsByFilters();
-      setRefreshCars(false);
+      carsContext?.handleGetCars(() => {
+        setRefreshCars(false);
+      });
     }
   }, [refreshCars]);
 
   return { setRefreshCars };
-};
-
-export default useRefreshCars;
+}

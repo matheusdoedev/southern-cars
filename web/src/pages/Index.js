@@ -11,16 +11,14 @@ import Button from "../components/Button/Button";
 import CarsModalForm from "../components/CarsModalForm/CarsModalForm";
 import Seo from "../components/Seo/Seo";
 
-import { ModalContext } from "../hooks/modalContext";
-import { CarsContext } from "../hooks/carsContext";
+import { ModalContext } from "../contexts/ModalContextProvider";
+import { CarsContext } from "../contexts/CarsContextProvider";
 import useRefreshCars from "../hooks/useRefreshCars";
-
-import resetDataStates from "../utils/resetDataStates";
 
 import "../styles/objects/input-group.scss";
 import "../styles/objects/button-group.scss";
 
-const Index = () => {
+export default function Index() {
   const modalContext = useContext(ModalContext);
   const carsContext = useContext(CarsContext);
 
@@ -45,13 +43,7 @@ const Index = () => {
             event.preventDefault();
 
             carsContext.handlePostCars(() => {
-              resetDataStates([
-                carsContext.setName,
-                carsContext.setPrice,
-                carsContext.setManufacturer,
-                carsContext.setQTY,
-                carsContext.setColor,
-              ]);
+              carsContext?.carDataDispatch({ type: "RESET_DATA" });
               modalContext.handleInactive();
               history.push("/");
               setRefreshCars(true);
@@ -75,13 +67,7 @@ const Index = () => {
             secondary
             onClick={() => {
               carsContext.handlePostCars(() => {
-                resetDataStates([
-                  carsContext.setName,
-                  carsContext.setPrice,
-                  carsContext.setManufacturer,
-                  carsContext.setQTY,
-                  carsContext.setColor,
-                ]);
+                carsContext?.carDataDispatch({ type: "RESET_DATA" });
                 setRefreshCars(true);
               });
             }}
@@ -97,13 +83,7 @@ const Index = () => {
             event.preventDefault();
 
             carsContext.handlePutUpdateCar(id, () => {
-              resetDataStates([
-                carsContext.setName,
-                carsContext.setPrice,
-                carsContext.setManufacturer,
-                carsContext.setQTY,
-                carsContext.setColor,
-              ]);
+              carsContext?.carDataDispatch({ type: "RESET_DATA" });
               modalContext.handleInactive();
               history.push("/");
               setRefreshCars(true);
@@ -164,6 +144,4 @@ const Index = () => {
       </Modal>
     </>
   );
-};
-
-export default Index;
+}

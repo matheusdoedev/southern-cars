@@ -7,7 +7,7 @@ import carIcon from "../../assets/car.svg";
 
 import "./SideBar.styles.scss";
 
-const SideBar = () => {
+export default function SideBar() {
   return (
     <aside className="sidebar" data-mobile="menu">
       <Brand />
@@ -24,6 +24,4 @@ const SideBar = () => {
       </nav>
     </aside>
   );
-};
-
-export default SideBar;
+}

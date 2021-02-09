@@ -6,7 +6,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import SelectInput from "@material-ui/core/Select";
 
-const Select = ({ name, value, setValue, label, options, ...props }) => {
+function Select({ name, value, setValue, label, options, ...props }) {
   const handleChange = (event) => {
     setValue(event.target.value);
   };
@@ -31,7 +31,7 @@ const Select = ({ name, value, setValue, label, options, ...props }) => {
       </SelectInput>
     </FormControl>
   );
-};
+}
 
 Select.prototype = {
   name: PropTypes.string.isRequired,

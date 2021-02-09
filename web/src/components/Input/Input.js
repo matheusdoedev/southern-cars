@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import TextField from "@material-ui/core/TextField";
 
-const Input = ({ value, name, setValue, ...props }) => {
+function Input({ value, name, setValue, ...props }) {
   return (
     <TextField
       id={name}
@@ -15,7 +15,7 @@ const Input = ({ value, name, setValue, ...props }) => {
       {...props}
     />
   );
-};
+}
 
 Input.propTypes = {
   value: PropTypes.any,

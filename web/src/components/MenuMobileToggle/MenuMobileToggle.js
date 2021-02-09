@@ -4,7 +4,7 @@ import useMenuMobile from "../../hooks/useMenuMobile";
 
 import "./MenuMobileToggle.styles.scss";
 
-const MenuMobileToggle = () => {
+export default function MenuMobileToggle() {
   const { handleActive } = useMenuMobile();
 
   return (
@@ -16,6 +16,4 @@ const MenuMobileToggle = () => {
       <span />
     </div>
   );
-};
-
-export default MenuMobileToggle;
+}

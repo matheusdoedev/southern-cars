@@ -3,25 +3,37 @@ import React, { useContext } from "react";
 import Input from "../Input/Input";
 import Select from "../Select/Select";
 
-import { CarsContext } from "../../hooks/carsContext";
+import { CarsContext } from "../../contexts/CarsContextProvider";
 
-const CarsModalForm = () => {
+export default function CarsModalForm() {
   const carsContext = useContext(CarsContext);
 
   return (
     <>
       <Input
         name="Name"
-        value={carsContext?.name}
-        setValue={carsContext?.setName}
+        value={carsContext?.carData.name}
+        onChange={(event) =>
+          carsContext?.carDataDispatch({
+            type: "SET_DATA",
+            carData: "name",
+            content: event.target.value,
+          })
+        }
         required
       />
       <div className="input-group">
         <Select
           label="Manufacturer"
           defaultValue=""
-          value={carsContext?.manufacturer}
-          setValue={carsContext?.setManufacturer}
+          value={carsContext?.carData.manufacturer}
+          onChange={(event) =>
+            carsContext?.carDataDispatch({
+              type: "SET_DATA",
+              carData: "manufacturer",
+              content: event.target.value,
+            })
+          }
           name="manufacturer"
           required
           options={[
@@ -33,8 +45,14 @@ const CarsModalForm = () => {
         <Select
           label="Color"
           defaultValue=""
-          value={carsContext?.color}
-          setValue={carsContext?.setColor}
+          value={carsContext?.carData.color}
+          onChange={(event) =>
+            carsContext?.carDataDispatch({
+              type: "SET_DATA",
+              carData: "color",
+              content: event.target.value,
+            })
+          }
           name="color"
           required
           options={[
@@ -48,19 +66,29 @@ const CarsModalForm = () => {
       <div className="input-group">
         <Input
           name="Price"
-          value={carsContext?.price}
-          setValue={carsContext?.setPrice}
+          value={carsContext?.carData.price}
+          onChange={(event) =>
+            carsContext?.carDataDispatch({
+              type: "SET_DATA",
+              carData: "price",
+              content: event.target.value,
+            })
+          }
           required
         />
         <Input
           name="Quantity"
-          value={carsContext?.qty}
-          setValue={carsContext?.setQTY}
+          value={carsContext?.carData.qty}
+          onChange={(event) =>
+            carsContext?.carDataDispatch({
+              type: "SET_DATA",
+              carData: "qty",
+              content: event.target.value,
+            })
+          }
           required
         />
       </div>
     </>
   );
-};
-
-export default CarsModalForm;
+}
