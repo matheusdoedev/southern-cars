@@ -2,19 +2,17 @@ import { useEffect } from "react";
 
 import useRefreshCars from "./useRefreshCars";
 
-const useRefreshCarsWithFilters = (carsContext) => {
+export default function useRefreshCarsWithFilters(carsContext) {
   const { setRefreshCars } = useRefreshCars();
 
   //  refresh cars with the change of filters
   useEffect(() => {
-    carsContext?.handleGetCarsByFilters(() => {
+    carsContext?.handleGetCars(() => {
       setRefreshCars();
     });
   }, [
-    carsContext?.nameFilter,
-    carsContext?.manufacturerFilter,
-    carsContext?.colorFilter,
+    carsContext?.carsFilters.nameFilter,
+    carsContext?.carsFilters.manufacturerFilter,
+    carsContext?.carsFilters.colorFilter,
   ]);
-};
-
-export default useRefreshCarsWithFilters;
+}

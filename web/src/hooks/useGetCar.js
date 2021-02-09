@@ -1,13 +1,11 @@
-export default async function useGetCar(carDataDispatch) {
+import api from "../services/api";
+
+export default function useGetCar(carDataDispatch) {
   async function handleGetCar(carId) {
     await api("GET", `/cars/${carId}`).then((r) => {
-      setName(r.name);
-      setManufacturer(r.manufacturer);
-      setColor(r.color);
-      setPrice(r.price);
-      setQTY(r.qty);
+      carDataDispatch({ type: "SET_CAR_DATA", carData: r });
     });
-
-    return { handleGetCar };
   }
+
+  return { handleGetCar };
 }

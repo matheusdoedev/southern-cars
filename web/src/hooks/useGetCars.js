@@ -13,7 +13,7 @@ export default function useGetCars() {
     colorFilter: "",
   });
 
-  async function handleGetCarsByFilters(callback) {
+  async function handleGetCars(callback) {
     await api(
       "GET",
       `/cars?name=${carsFilters.nameFilter}&manufacturer=${carsFilters.manufacturerFilter}&color=${carsFilters.colorFilter}&priceRange=${carsFilters.priceRange}`
@@ -23,5 +23,5 @@ export default function useGetCars() {
     });
   }
 
-  return { handleGetCarsByFilters, carsFiltersDispatch, cars };
+  return { handleGetCars, carsFilters, carsFiltersDispatch, cars };
 }
