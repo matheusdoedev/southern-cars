@@ -1,0 +1,18 @@
+.select-block {
+  width: 100%;
+
+  &__label,
+  &__input {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    margin-bottom: var(--gap);
+  }
+
+  &__input {
+    padding: var(--gap-xs);
+    width: 100%;
+  }
+}

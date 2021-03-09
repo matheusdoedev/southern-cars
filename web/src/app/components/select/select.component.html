@@ -1,0 +1,11 @@
+<div class="select-block">
+  <label [for]="select.name" class="select-block__label">{{
+    select.label
+  }}</label>
+  <select [id]="select.name" [name]="select.name" class="select-block__input">
+    <option value="">Selecione uma opção</option>
+    <option [value]="option.value" *ngFor="let option of options">
+      {{ option.label }}
+    </option>
+  </select>
+</div>
