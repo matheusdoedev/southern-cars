@@ -1,0 +1,25 @@
+@import "../../../styles/settings/colors";
+@import "../../../styles/tools/breakpoints";
+
+.header {
+  padding: var(--gap-xs) 0;
+  background: $secondary;
+
+  &__account {
+    &__name {
+      color: white;
+      margin-right: var(--gap-xs);
+    }
+
+    &__avatar {
+      width: 43px;
+      height: 43px;
+      background-color: gray;
+      border-radius: 50px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      -ms-border-radius: 50px;
+      -o-border-radius: 50px;
+    }
+  }
+}
