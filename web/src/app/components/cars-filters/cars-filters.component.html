@@ -1,0 +1,41 @@
+<section class="cars-filters--container" title="Cars Filters">
+  <app-input
+    label="Car name"
+    name="nameFilter"
+    placeholder="Enter car name"
+  ></app-input>
+  <app-select
+    label="Manufacturer"
+    name="manufacturer"
+    [options]="[
+      { value: 'Ford', label: 'Ford' },
+      { value: 'Mazda', label: 'Mazda' },
+      { value: 'Renault', label: 'Renault' }
+    ]"
+  ></app-select>
+  <app-select
+    label="Color"
+    name="color"
+    [options]="[
+      { value: 'Black', label: 'Black' },
+      { value: 'Blue', label: 'Blue' },
+      { value: 'Red', label: 'Red' },
+      { value: 'Yellow', label: 'Yellow' }
+    ]"
+  ></app-select>
+  <app-select
+    label="Price range"
+    name="priceRange"
+    [options]="[
+      { value: '$0 to $20.000,00', label: '$0 to $20.000,00' },
+      {
+        value: '$20.000,01 to $50.000,00',
+        label: '$20.000,01 to $50.000,00'
+      },
+      {
+        value: '$50.000,01 to $125.000,00',
+        label: '$50.000,01 to $125.000,00'
+      }
+    ]"
+  ></app-select>
+</section>
