@@ -1,0 +1,12 @@
+@import "../../../styles/tools/breakpoints";
+
+.cars-head {
+  &__title {
+    text-align: center;
+    padding: var(--gap-xl) 0 var(--gap-md) 0;
+
+    @media (max-width: $small) {
+      padding: var(--gap-lg) 0 var(--gap-sm) 0;
+    }
+  }
+}
