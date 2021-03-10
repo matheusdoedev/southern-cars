@@ -1,0 +1,40 @@
+@import "../../../styles/settings/colors";
+@import "../../../styles/tools/breakpoints";
+
+.button {
+  padding: var(--gap-xs);
+  display: flex;
+  align-items: center;
+
+  background: $primary;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+
+  text-transform: uppercase;
+
+  &__img {
+    width: 14px;
+    height: 14px;
+    margin-right: var(--gap);
+  }
+
+  & + & {
+    margin-left: var(--gap-xs);
+
+    @media (max-width: $small) {
+      margin-left: 0 !important;
+    }
+  }
+
+  &--secondary {
+    background: white;
+    color: $primary;
+
+    border: 1px solid $support;
+  }
+}

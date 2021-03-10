@@ -1,0 +1,4 @@
+<button [class]="secondary ? 'button button--secondary' : 'button'">
+  <img [src]="icon" [alt]="content" class="button__img" *ngIf="icon" />
+  {{ content }}
+</button>
