@@ -3,6 +3,8 @@
     label="Car name"
     name="nameFilter"
     placeholder="Enter car name"
+    [value]="nameFilter"
+    (valueChanged)="onValueChange($event)"
   ></app-input>
   <app-select
     label="Manufacturer"

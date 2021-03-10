@@ -1,12 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'cars-filters',
   templateUrl: './cars-filters.component.html',
   styleUrls: ['./cars-filters.component.scss'],
 })
-export class CarsFiltersComponent implements OnInit {
-  constructor() {}
+export class CarsFiltersComponent {
+  nameFilter: string = '';
+  manufacturerFilter: string = '';
+  colorFilter: string = '';
+  priceFilter: string = '';
 
-  ngOnInit(): void {}
+  onValueChange(value: string): void {
+    this.nameFilter = value;
+  }
 }
