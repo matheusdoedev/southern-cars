@@ -1,8 +1,16 @@
 <li class="car-result">
-  <p>{{ id }}</p>
-  <p>{{ name }}</p>
-  <p>{{ manufacturer }}</p>
-  <p>{{ color }}</p>
-  <p>{{ qty }}</p>
-  <p>${{ price }}</p>
+  <p class="car-result_infos">{{ id }}</p>
+  <p class="car-result_infos">{{ name }}</p>
+  <p class="car-result_infos">{{ manufacturer }}</p>
+  <p class="car-result_infos">{{ color }}</p>
+  <p class="car-result_infos">{{ qty }}</p>
+  <p class="car-result_infos">{{ price | currency: "USD":"symbol":"1.2-2" }}</p>
+  <div class="car-result__buttons">
+    <a href="/" class="car-result__button">
+      <img class="car-result__button__img" [src]="editIcon" alt="Editar" />
+    </a>
+    <a href="/" class="car-result__button">
+      <img class="car-result__button__img" [src]="deleteIcon" alt="Deletar" />
+    </a>
+  </div>
 </li>

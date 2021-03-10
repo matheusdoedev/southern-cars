@@ -7,9 +7,32 @@
     </div>
 
     <div class="row justify-content-center">
-      <div class="col-12">
-          
+      <section
+        class="col-12 d-flex justify-content-center"
+        title="Search Results List"
+      >
+        <ul class="cars-results__list" *ngIf="cars.length > 0">
+          <cars-result
+            *ngFor="let car of cars"
+            [id]="car.id"
+            [name]="car.name"
+            [manufacturer]="car.manufacturer"
+            [color]="car.color"
+            [price]="car.price"
+            [qty]="car.qty"
+          ></cars-result>
+        </ul>
+        <h3 class="cars-results__no-list" *ngIf="cars.length === 0">
+          Cars not found
+        </h3>
+      </section>
+    </div>
+
+    <div class="row justify-content-end">
+      <div class="col-12 d-flex justify-content-end">
+        <app-button [icon]="plusIcon" content="Add car"></app-button>
       </div>
     </div>
   </div>
 </section>
+.

@@ -1,0 +1,21 @@
+.cars-results {
+  padding: var(--gap-lg) 0;
+
+  &__title {
+    margin-bottom: var(--gap-md);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--gap-md);
+    width: 100%;
+  }
+
+  &__no-list {
+    text-align: center;
+    opacity: 0.65;
+    margin-top: var(--gap-md);
+    margin-bottom: var(--gap-md);
+  }
+}
