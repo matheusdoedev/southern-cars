@@ -1,28 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
-
-import { InputData } from './input.interface';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
 })
-export class InputComponent implements OnInit {
-  input: InputData = {
-    name: '',
-    label: '',
-    placeholder: '',
-  };
+export class InputComponent {
+  @Input('label') label: string = '';
+  @Input('name') name: string = '';
+  @Input('placeholder') placeholder: string = '';
+  @Input('value') value: string = '';
+  @Output() valueChanged: EventEmitter<string> = new EventEmitter<string>();
 
-  @Input('label') label = '';
-  @Input('name') name = '';
-  @Input('placeholder') placeholder = '';
-
-  ngOnInit(): void {
-    this.input = {
-      name: this.name,
-      label: this.label,
-      placeholder: this.placeholder,
-    };
+  onChange(): void {
+    this.valueChanged.emit(this.value);
   }
 }

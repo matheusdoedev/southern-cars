@@ -1,29 +1,18 @@
-import { Input } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
-
-import { SelectData } from './select.interface';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss'],
 })
-export class SelectComponent implements OnInit {
-  select: SelectData = {
-    name: '',
+export class SelectComponent {
+  @Input('name') name: string = '';
+  @Input('label') label: string = '';
+  @Input('options') options: { label: string; value: string }[] = [
+    { label: '', value: '' },
+  ];
+  @Input('value') value: { label: string; value: string } = {
     label: '',
-    options: [{ label: '', value: '' }],
+    value: '',
   };
-
-  @Input('name') name = '';
-  @Input('label') label = '';
-  @Input('options') options = [{ label: '', value: '' }];
-
-  ngOnInit(): void {
-    this.select = {
-      name: this.name,
-      label: this.label,
-      options: this.options,
-    };
-  }
 }

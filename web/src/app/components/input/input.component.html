@@ -1,10 +1,13 @@
 <div class="input-block">
-  <label [for]="input.name" class="input-block__label">{{ input.label }}</label>
+  <label [for]="name" class="input-block__label">{{ label }}</label>
   <input
     type="text"
-    [id]="input.name"
-    [name]="input.name"
-    [placeholder]="input.placeholder"
-    class="input-block__input"
+    [id]="name"
+    [name]="name"
+    [placeholder]="placeholder"
+    [(ngModel)]="value"
+    (change)="onChange()"
+    class="inaput-block__input"
   />
+  <h1>{{ value }}</h1>
 </div>
