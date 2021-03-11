@@ -10,13 +10,13 @@ import { Car } from 'src/app/classes/Car/Car';
 export class CarsResultComponent {
   car: Car = new Car(0, '', '', '', 0, 0);
 
-  deleteIcon = 'assets/trash.svg';
-  editIcon = 'assets/pencil.svg';
+  deleteIcon: string = 'assets/trash.svg';
+  editIcon: string = 'assets/pencil.svg';
 
-  @Input('id') id = 0;
-  @Input('name') name = '';
-  @Input('manufacturer') manufacturer = '';
-  @Input('color') color = '';
-  @Input('qty') qty = 0;
-  @Input('price') price = 0.0;
+  @Input('id') id: number = 0;
+  @Input('name') name: string = '';
+  @Input('manufacturer') manufacturer: string = '';
+  @Input('color') color: string = '';
+  @Input('qty') qty: number = 0;
+  @Input('price') price: number = 0.0;
 }

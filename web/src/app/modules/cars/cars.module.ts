@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { CarsComponent } from './cars.component';
 import { CarsHeadComponent } from 'src/app/components/cars-head/cars-head.component';
@@ -22,7 +23,7 @@ import { ButtonComponent } from 'src/app/components/button/button.component';
     CarsResultComponent,
     ButtonComponent,
   ],
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, HttpClientModule],
   bootstrap: [CarsComponent],
   exports: [CarsComponent],
 })

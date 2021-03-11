@@ -19,9 +19,9 @@
     text-transform: uppercase;
   }
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+  // &:last-child {
+  //   margin-bottom: 0;
+  // }
 
   @media (max-width: $small) {
     grid-template-columns: 1fr;

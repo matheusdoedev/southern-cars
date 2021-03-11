@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Car } from 'src/app/classes/Car/Car';
+
+import { CarService } from 'src/app/services/car.service';
 
 @Component({
   selector: 'cars-results',
@@ -7,19 +10,12 @@ import { Car } from 'src/app/classes/Car/Car';
   styleUrls: ['./cars-results.component.scss'],
 })
 export class CarsResultsComponent implements OnInit {
-  cars: Car[] = [
-    {
-      id: 1,
-      name: 'Mustang',
-      manufacturer: 'Ford',
-      color: 'Blue',
-      price: 42000,
-      qty: 1,
-    },
-  ];
   plusIcon = 'assets/plus.svg';
+  cars: Car[] = [];
 
-  constructor() {}
+  constructor(private _carService: CarService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.cars = this._carService.getCars();
+  }
 }
