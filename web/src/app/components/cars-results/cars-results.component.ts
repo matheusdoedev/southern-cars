@@ -11,11 +11,16 @@ import { CarService } from 'src/app/services/car.service';
 })
 export class CarsResultsComponent implements OnInit {
   plusIcon = 'assets/plus.svg';
+
   cars: Car[] = [];
+  errorMessage: string = '';
 
   constructor(private _carService: CarService) {}
 
   ngOnInit(): void {
-    this.cars = this._carService.getCars();
+    this._carService.getCars().subscribe({
+      next: (cars) => (this.cars = cars),
+      error: (err) => (this.errorMessage = err),
+    });
   }
 }
