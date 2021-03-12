@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-select',
@@ -11,8 +11,14 @@ export class SelectComponent {
   @Input('options') options: { label: string; value: string }[] = [
     { label: '', value: '' },
   ];
-  @Input('value') value: { label: string; value: string } = {
-    label: '',
-    value: '',
-  };
+
+  value: string = '';
+  @Output() valueChanged: EventEmitter<{
+    data: string;
+    value: string;
+  }> = new EventEmitter();
+
+  onChange(): void {
+    this.valueChanged.emit({ data: this.name, value: this.value });
+  }
 }

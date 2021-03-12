@@ -6,8 +6,7 @@
     [name]="name"
     [placeholder]="placeholder"
     [(ngModel)]="value"
-    (change)="onChange()"
-    class="inaput-block__input"
+    (keypress)="onChange()"
+    class="input-block__input"
   />
-  <h1>{{ value }}</h1>
 </div>

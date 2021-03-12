@@ -3,12 +3,12 @@
     label="Car name"
     name="nameFilter"
     placeholder="Enter car name"
-    [value]="nameFilter"
     (valueChanged)="onValueChange($event)"
   ></app-input>
   <app-select
     label="Manufacturer"
-    name="manufacturer"
+    name="manufacturerFilter"
+    (valueChanged)="onValueChange($event)"
     [options]="[
       { value: 'Ford', label: 'Ford' },
       { value: 'Mazda', label: 'Mazda' },
@@ -17,7 +17,8 @@
   ></app-select>
   <app-select
     label="Color"
-    name="color"
+    name="colorFilter"
+    (valueChanged)="onValueChange($event)"
     [options]="[
       { value: 'Black', label: 'Black' },
       { value: 'Blue', label: 'Blue' },
@@ -27,7 +28,8 @@
   ></app-select>
   <app-select
     label="Price range"
-    name="priceRange"
+    name="priceFilter"
+    (valueChanged)="onValueChange($event)"
     [options]="[
       { value: '$0 to $20.000,00', label: '$0 to $20.000,00' },
       {

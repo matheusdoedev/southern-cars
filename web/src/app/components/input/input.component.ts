@@ -9,10 +9,15 @@ export class InputComponent {
   @Input('label') label: string = '';
   @Input('name') name: string = '';
   @Input('placeholder') placeholder: string = '';
-  @Input('value') value: string = '';
-  @Output() valueChanged: EventEmitter<string> = new EventEmitter<string>();
+
+  value: string = '';
+
+  @Output() valueChanged: EventEmitter<{
+    data: string;
+    value: string;
+  }> = new EventEmitter();
 
   onChange(): void {
-    this.valueChanged.emit(this.value);
+    this.valueChanged.emit({ data: this.name, value: this.value });
   }
 }
