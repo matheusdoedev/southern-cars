@@ -1,13 +1,6 @@
 const Cars = require('../models/Cars');
 
 class CarsController {
-  // get all cars
-  static async getAllCars(req, res) {
-    const cars = await Cars.findAll();
-
-    return res.status(200).json({ message: 'All cars listed', cars });
-  }
-
   // create new car
   static async postCreateCar(req, res) {
     const { name, manufacturer, color, price, qty } = req.body;
@@ -63,7 +56,7 @@ class CarsController {
   }
 
   // get car by query params
-  static async getCarByName(req, res) {
+  static async getCarByFilters(req, res) {
     const { name, manufacturer, priceRange, color } = req.query;
 
     let params = {};
@@ -77,7 +70,7 @@ class CarsController {
         where: params,
       });
 
-      return res.status(200).json({ message: 'Car found', cars });
+      return res.status(200).json(cars);
     } catch (err) {
       return res.status(400).json({ message: err });
     }

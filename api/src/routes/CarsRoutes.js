@@ -10,9 +10,7 @@ routes.delete('/:id', CarsController.deleteCar);
 
 routes.post('/', CarsController.postCreateCar);
 
-routes.get('/', CarsController.getCarByName);
-
-routes.get('/', CarsController.getAllCars);
+routes.get('/', CarsController.getCarByFilters);
 
 routes.get('/:id', CarsController.getCarById);
 
