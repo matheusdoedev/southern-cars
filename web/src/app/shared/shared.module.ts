@@ -8,6 +8,7 @@ import { SelectComponent } from './select/select.component';
 import { InputComponent } from './input/input.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ButtonComponent } from './button/button.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ButtonComponent } from './button/button.component';
     InputComponent,
     SidebarComponent,
     ButtonComponent,
+    ModalComponent,
   ],
   imports: [CommonModule, FormsModule, RouterModule],
   exports: [
@@ -24,6 +26,7 @@ import { ButtonComponent } from './button/button.component';
     InputComponent,
     SidebarComponent,
     ButtonComponent,
+    ModalComponent,
   ],
 })
 export class SharedModule {}
