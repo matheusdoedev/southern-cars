@@ -5,7 +5,9 @@ import { tap, catchError } from 'rxjs/operators';
 
 import { Car } from '../classes/Car/Car';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class CarService {
   private carsApiUrl = 'http://localhost:3333/cars';
 
