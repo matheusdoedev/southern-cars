@@ -20,6 +20,13 @@ export class CarService {
     );
   }
 
+  deleteCar(id: number): Observable<Car[]> {
+    return this.http.delete<Car[]>(`${this.carsApiUrl}/${id}`).pipe(
+      tap((data) => console.log(data)),
+      catchError(this.handleError)
+    );
+  }
+
   private handleError(err: HttpErrorResponse) {
     let errorMessage = '';
 
