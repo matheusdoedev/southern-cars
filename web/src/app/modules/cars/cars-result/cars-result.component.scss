@@ -39,6 +39,9 @@
     width: 20px;
     height: 20px;
     box-sizing: content-box;
+    border: none;
+    background: none;
+    padding: 0.625rem;
 
     &:first-child {
       margin-right: var(--gap);
