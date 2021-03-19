@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { Car } from 'src/app/classes/Car/Car';
+import { CarService } from 'src/app/services/car.service';
 
 @Component({
   selector: 'cars-result',
@@ -19,4 +20,13 @@ export class CarsResultComponent {
   @Input('color') color: string = '';
   @Input('qty') qty: number = 0;
   @Input('price') price: number = 0.0;
+
+  constructor(private _carService: CarService) {}
+
+  deleteCar(): void {
+    this._carService.deleteCar(this.id).subscribe({
+      next: (r) => console.log(r),
+      error: (err) => console.log(err),
+    });
+  }
 }
