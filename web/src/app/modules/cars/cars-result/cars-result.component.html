@@ -6,11 +6,11 @@
   <p class="car-result_infos">{{ qty }}</p>
   <p class="car-result_infos">{{ price | currency: "USD":"symbol":"1.2-2" }}</p>
   <div class="car-result__buttons">
-    <a href="/" class="car-result__button">
+    <button class="car-result__button">
       <img class="car-result__button__img" [src]="editIcon" alt="Editar" />
-    </a>
-    <a href="/" class="car-result__button">
+    </button>
+    <button class="car-result__button">
       <img class="car-result__button__img" [src]="deleteIcon" alt="Deletar" />
-    </a>
+    </button>
   </div>
 </li>
