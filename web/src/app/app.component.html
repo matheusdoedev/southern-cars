@@ -1,1 +1,9 @@
-<router-outlet></router-outlet>
+<main class="dashboard-layout">
+  <app-sidebar></app-sidebar>
+  <section class="dashboard-layout__content" title="Dashboard Content">
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+  </section>
+</main>
+
+<app-modal name="modal-add-car" title="Add Car"><h1>Hello World</h1></app-modal>
