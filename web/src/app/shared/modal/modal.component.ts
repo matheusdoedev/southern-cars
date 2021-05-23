@@ -1,16 +1,24 @@
-import { ButtonComponent } from './../button/button.component';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
 })
-export class ModalComponent implements OnInit {
+export class ModalComponent implements AfterViewInit {
   @Input() name: string = '';
   @Input() title: string = '';
+  @Input() children: string = '';
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngAfterViewInit(): void {
+    const modal = document.getElementById(this.name);
+
+    if (modal) {
+      modal.appendChild(
+        document.createElement('div')
+      ).innerHTML = this.children;
+    }
+  }
 }
